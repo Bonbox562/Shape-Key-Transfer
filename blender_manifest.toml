@@ -1,0 +1,13 @@
+schema_version = "1.0.0"
+
+id = "topu_forced_shape_key_transfer"
+version = "1.0.0"
+name = "ToPu Forced Shape Key Transfer"
+tagline = "Transfer shape keys between meshes with different topology"
+maintainer = "ToPu"
+type = "add-on"
+
+tags = ["Modeling"]
+blender_version_min = "4.2.0"
+license = ["SPDX:GPL-3.0-or-later"]
+copyright = ["2026 ToPu"]
