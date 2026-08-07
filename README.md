@@ -1,4 +1,4 @@
-# Forced-Shape-Key-Transfer
+# ToPu Forced Shape Key Transfer
 選択オブジェクトのシェイプキーを転送するアドオン
 
 https://github.com/CM3D2user/Blender-CM3D2-Converter#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
