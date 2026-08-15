@@ -26,8 +26,8 @@ from mathutils.kdtree import KDTree
 # scripts/addons is only recognised as an add-on when bl_info is present.
 bl_info = {
     "name": "Forced Shape Key Transfer",
-    "author": "ToPu",
-    "version": (2, 0, 0),
+    "author": "Boon56228",
+    "version": (1, 0, 0),
     "blender": (4, 2, 0),
     "location": "Object Data Properties > Forced Shape Key Transfer",
     "description": "Transfer shape keys between meshes with different topology",
@@ -1670,6 +1670,23 @@ TRANSLATIONS = {
 }
 
 
+def _mirror_operator_labels(translations):
+    """Give every Operator bl_label a second entry under the operator context.
+
+    Blender resolves an Operator's label through its own translation context
+    ("Operator"), not the default one, so a menu or button label registered only
+    under "*" stays in English while the identical Panel label is translated.
+    """
+    operator_context = bpy.app.translations.contexts.operator_default
+    labels = [cls.bl_label for cls in CLASSES if issubclass(cls, Operator)]
+    for entries in translations.values():
+        for label in labels:
+            translated = entries.get(("*", label))
+            if translated is not None:
+                entries.setdefault((operator_context, label), translated)
+    return translations
+
+
 CLASSES = (
     TOPU_FST_Settings,
     TOPU_OT_forced_shape_key_transfer,
@@ -1711,7 +1728,7 @@ def register():
             bpy.app.translations.unregister(ADDON_ID)
         except Exception:
             pass
-        bpy.app.translations.register(ADDON_ID, TRANSLATIONS)
+        bpy.app.translations.register(ADDON_ID, _mirror_operator_labels(TRANSLATIONS))
 
         for menu_name in ("MESH_MT_shape_key_context_menu", "MESH_MT_shape_key_specials"):
             menu_type = getattr(bpy.types, menu_name, None)
