@@ -1,10 +1,10 @@
 schema_version = "1.0.0"
 
-id = "topu_forced_shape_key_transfer"
+id = "forced_shape_key_transfer"
 version = "1.0.0"
-name = "ToPu Forced Shape Key Transfer"
+name = "Forced Shape Key Transfer"
 tagline = "Transfer shape keys between meshes with different topology"
-maintainer = "ToPu"
+maintainer = "Boon56228"
 type = "add-on"
 
 tags = ["Modeling"]
