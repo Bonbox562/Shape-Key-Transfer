@@ -40,8 +40,3 @@
 - **スムージング** — 転送後の変位にラプラシアン平滑化を掛け、参照元が粗い場合のカクつきを軽減します。
 - **左右対称化** — 転送先ローカルX軸で対になる頂点の変位を平均化します。
 
-## ライセンス
-
-本アドオンはGNU General Public License v3.0 or laterで提供されます。
-
-転送ワークフローの調査対象であるBlender-CM3D2-ConverterはApache License 2.0です。詳細は`THIRD_PARTY_NOTICES.md`および`licenses/Apache-2.0.txt`を参照してください。
